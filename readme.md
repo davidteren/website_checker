@@ -1,6 +1,6 @@
 # WebsiteChecker
 
-> _Calling this WebSiteChecker for lack of a better name. 🙄 
+> _Calling this WebSiteChecker for lack of a better name_. 🙄 
 
 ### Backstory  
 
