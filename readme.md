@@ -10,7 +10,9 @@ Someone in the user group mentioned that videos likely showcasing new features a
 
 As you can see, the text is at the bottom of the Playlist.
 
-![img.png](img.png)
+
+
+![img_1.png](img_1.png)
 
 #### Problem
 
