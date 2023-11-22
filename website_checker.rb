@@ -5,7 +5,7 @@ require 'fileutils'
 module WebsiteChecker
   module_function
 
-  TEXT_TO_LOOK_FOR = "'4 unavailable videos are hidden'"
+  TEXT_TO_LOOK_FOR = "4 unavailable videos are hidden"
   URL_TO_CHECK = "https://www.youtube.com/playlist?list=PL2C01sMWT3BZLmZBMw26BqCP6cRyZDCQs"
   WAIT_TIME = 300
 
@@ -22,7 +22,7 @@ module WebsiteChecker
       previous_state = driver.page_source.include?(TEXT_TO_LOOK_FOR)
 
       loop do
-        logger "Checking for text: #{TEXT_TO_LOOK_FOR}... at URL: #{URL_TO_CHECK}"
+        logger "Checking for text: '#{TEXT_TO_LOOK_FOR}' at URL: #{URL_TO_CHECK}"
 
         driver.navigate.refresh
         wait.until { driver.execute_script("return document.readyState") == "complete" }
@@ -33,7 +33,7 @@ module WebsiteChecker
           logger("Change detected for text: #{TEXT_TO_LOOK_FOR}... at URL: #{URL_TO_CHECK}", true)
           previous_state = current_state
         else
-          logger("No changes detected for text: #{TEXT_TO_LOOK_FOR}... at URL: #{URL_TO_CHECK}")
+          logger("No changes detected for text: '#{TEXT_TO_LOOK_FOR}' at URL: #{URL_TO_CHECK}")
         end
 
         logger "Waiting for #{wait_human_time} before checking again..."
@@ -87,7 +87,7 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   WebsiteChecker.make_log_dir_unless_exists
-  WebsiteChecker.logger("Start checking for text: #{WebsiteChecker::TEXT_TO_LOOK_FOR}... at URL: #{WebsiteChecker::URL_TO_CHECK}")
+  WebsiteChecker.logger("Start checking for text: '#{WebsiteChecker::TEXT_TO_LOOK_FOR}' at URL: #{WebsiteChecker::URL_TO_CHECK}")
   WebsiteChecker.logger("Log file: #{WebsiteChecker::log_file_path}")
   WebsiteChecker.check_for_text
 end

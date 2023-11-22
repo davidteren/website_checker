@@ -18,6 +18,26 @@ As you can see, the text is at the bottom of the Playlist.
 
 Selenium CSS selectors do not work on this YouTube page because it seems the content data is also loaded within a script tag, assigning a large JSON object to a JavaScript object that I assume is lazy-loaded. This would cause the Selenium selector to fail when attempting to select the element containing our text.
 
-### Solution
+#### Solution
 
 Render the page and match the text we are checking to see if it has changed.
+
+#### Usage
+
+Change the following constants in `website_checker.rb`
+```ruby
+TEXT_TO_LOOK_FOR = "4 unavailable videos are hidden"
+URL_TO_CHECK = "https://www.youtube.com/playlist?list=PL2C01sMWT3BZLmZBMw26BqCP6cRyZDCQs"
+WAIT_TIME = 300
+```
+
+Install the dependencies 
+```bash
+bundle
+```
+
+Run the script
+```bash
+ruby 
+```
+
