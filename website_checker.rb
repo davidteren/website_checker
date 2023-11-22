@@ -91,5 +91,3 @@ if __FILE__ == $PROGRAM_NAME
   WebsiteChecker.logger("Log file: #{WebsiteChecker::log_file_path}")
   WebsiteChecker.check_for_text
 end
-
-
