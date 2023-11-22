@@ -40,4 +40,3 @@ Run the script
 ```bash
 ruby 
 ```
-
